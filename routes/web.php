@@ -34,6 +34,6 @@ Route::get('shop',[HomeController::class, 'shop']);
 Route::get('whyUs',[HomeController::class, 'whyUs']);
 Route::get('testimonial',[HomeController::class, 'testimonial']);
 Route::get('contactUs',[HomeController::class, 'contactUs']);
-Route::get('login',[LoginController::class,'login']);
+Route::get('login',[LoginController::class,'show']);
 Route::get('registeration',[LoginController::class,'registeration']);
 Route::post('store',[LoginController::class,'store'])->name('store');

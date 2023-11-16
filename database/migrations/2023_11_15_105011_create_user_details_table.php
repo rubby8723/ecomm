@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('state')->nullable();
             $table->string('city')->nullable();
             $table->string('image',200)->default('no_image.jpg');
+            $table->integer('user_id');
             $table->boolean('status',200)->default(true);
             $table->timestamps();
         });

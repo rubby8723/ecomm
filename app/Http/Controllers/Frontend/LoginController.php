@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 class LoginController extends Controller
 {
-    public function login(){
+    public function show(){
         return view('frontend.pages.login.form');
     }
     public function registeration(){
@@ -33,6 +33,7 @@ class LoginController extends Controller
         $user->role_id = 2;
         $user->save();
         $userDetail = new UserDetail();
+        $userDetail->user_id = $user->id;
         $userDetail->dob = $request->dob;
         $userDetail->gender = $request->gender;
         $userDetail->address = $request->address;
@@ -42,4 +43,16 @@ class LoginController extends Controller
         $userDetail->save();
         return redirect()->back();
     }
+
+    public function login(Request $request)
+    {
+        $user = User::all();
+
+        if($request->email && $request->password)
+        {
+            if($request->email==$user){
+                
+            }
+        }
+    } 
 }

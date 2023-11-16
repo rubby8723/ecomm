@@ -26,16 +26,14 @@
                 <form action="{{route('store')}}" method="post">
                   @csrf
                   <div class="row">
-                    <div class="col-md-6 mb-2">
+                    <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <label class="form-label" for="first_name">First name</label>
-                        <input type="text" id="first_name" name="first_name" class="form-control form-control-lg" />
+                        <input type="text" id="first_name" name="first_name" class="form-control form-control-lg" placeholder="First Name" />
                       </div>
                     </div>
-                    <div class="col-md-6 mb-2">
+                    <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <label class="form-label" name="last_name" for="last_name">Last name</label>
-                        <input type="text" id="last_name" name="last_name" class="form-control form-control-lg" />
+                        <input type="text" id="last_name" name="last_name" class="form-control form-control-lg" placeholder="Last Name" />
                       </div>
                     </div>
                   </div>
@@ -43,19 +41,68 @@
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <label class="form-label" for="form3Example97">Email ID</label>
-                        <input type="email" name="email" id="form3Example97" class="form-control form-control-lg" />
+                        <input type="email" name="email" id="form3Example97" class="form-control form-control-lg" placeholder="Email" />
                       </div>
                     </div>
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
-                        <label class="form-label" for="form3Example9">DOB</label>
-                        <input type="date" name="dob" id="dob" class="form-control form-control-lg" />
+                        <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Password"/>
                       </div>
                     </div>
                   </div>
   
-                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" name="address" id="form3Example9" class="form-control form-control-lg" placeholder="Addres
+                        s"/>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <select name="country" class="form-control">
+                          <option value="1">Country</option>
+                          <option value="2">india</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <select name="state" class=" form-control">
+                          <option value="1">State</option>
+                          <option value="2">punjab</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <select name="city" class=" form-control">
+                          <option value="1">City</option>
+                          <option value="2">Ludhiana</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example90"  name="pincode" class="form-control form-control-lg" placeholder="Pincode" />
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="date" name="dob" id="dob" class="form-control form-control-lg" placeholder="Dob"/>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2" >
 
                     <h6 class="mb-0 me-4">Gender: </h6>
   
@@ -72,69 +119,12 @@
                     </div>
   
                   </div>
-                  
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <input type="text" name="address" id="form3Example9" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example9">Address</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <select name="country" class="form-control">
-                          <option value="1">Country</option>
-                          <option value="2">Option 1</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
 
-                  
-                  <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <select name="state" class=" form-control">
-                          <option value="1">State</option>
-                          <option value="2">Option 1</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div class="form-outline">
-                        <select name="city" class=" form-control">
-                          <option value="1">City</option>
-                          <option value="2">Option 1</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="row">
-                   
-                    <div class="col-md-6">
-                      <div class="form-outline mb-4">
-                        <input type="text" id="form3Example90"  name="pincode" class="form-control form-control-lg" />
-                        <label class="form-label"  for="form3Example90">Pincode</label>
-                      </div>
-                    </div>
-                  </div>
-  
-                  
-                    
                   <div class="d-flex justify-content-end ">
                     <button type="submit" class="btn btn-warning">Submit form</button>
                    
                   </div>
 
-                  {{-- <div class="text-center pt-1 mb-5 pb-1">
-                    <a class="text-muted" href="#!">Forgot password?</a>
-                  </div> --}}
-
-                  {{-- <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Already have a account?</p>
-                    <a type="button" href="login" class="btn btn-outline-danger">login</a>
-                  </div> --}}
                 </form>
                 </div>
               </div>
