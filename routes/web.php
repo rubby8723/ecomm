@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,6 @@ Route::get('shop',[HomeController::class, 'shop']);
 Route::get('whyUs',[HomeController::class, 'whyUs']);
 Route::get('testimonial',[HomeController::class, 'testimonial']);
 Route::get('contactUs',[HomeController::class, 'contactUs']);
+Route::get('login',[LoginController::class,'show']);
+Route::get('registeration',[LoginController::class,'registeration']);
+Route::post('store',[LoginController::class,'store'])->name('store');
