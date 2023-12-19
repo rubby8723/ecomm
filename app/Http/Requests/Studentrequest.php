@@ -24,10 +24,17 @@ class Studentrequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
-            'city'=>'required',
-            'gender'=>'required',
-            'hobbies'=>'required',
+            'first_name' => 'required',
+            'last_name'  => 'required',
+            'email'      => 'required',
+            'password'   => 'required',
+            'country'    => 'required',
+            'state'      => 'required',
+            'address'    => 'required',
+            'city'       => 'required',
+            'pincode'    => 'required',
+            'gender'     => 'required',
+            'dob'        => 'required',
         ];
     }
 }

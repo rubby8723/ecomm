@@ -27,15 +27,14 @@
                   @csrf
                   <div class="row">
                     <div class="col-md-6 mb-4">
-                      <div class="form-outline">
                         <input type="text" id="first_name" name="first_name" class="form-control form-control-lg" placeholder="First Name" />
-                      </div>
                     </div>
+                   
                     <div class="col-md-6 mb-4">
-                      <div class="form-outline">
                         <input type="text" id="last_name" name="last_name" class="form-control form-control-lg" placeholder="Last Name" />
-                      </div>
                     </div>
+                    @if($errors->has('first_name'))<div class="text-danger">{{ $errors->first('first_name') }}</div>@endif
+                    @if($errors->has('last_name'))<div class="text-danger">{{ $errors->first('last_name') }}</div>@endif
                   </div>
                   
                   <div class="row">
@@ -49,9 +48,9 @@
                         <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Password"/>
                       </div>
                     </div>
+                    @if($errors->has('email'))<div class="text-danger">{{ $errors->first('email') }}</div>@endif
+                    @if($errors->has('password'))<div class="text-danger">{{ $errors->first('password') }}</div>@endif
                   </div>
-  
-                  
                   <div class="row">
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
@@ -67,6 +66,8 @@
                         </select>
                       </div>
                     </div>
+                    @if($errors->has('address'))<div class="text-danger">{{ $errors->first('address') }}</div>@endif
+                    @if($errors->has('country'))<div class="text-danger">{{ $errors->first('country') }}</div>@endif
                   </div>
 
                   
@@ -87,6 +88,8 @@
                         </select>
                       </div>
                     </div>
+                    @if($errors->has('state'))<div class="text-danger">{{ $errors->first('state') }}</div>@endif
+                    @if($errors->has('city'))<div class="text-danger">{{ $errors->first('city') }}</div>@endif
                   </div>
                   
                   <div class="row">
@@ -100,6 +103,8 @@
                         <input type="date" name="dob" id="dob" class="form-control form-control-lg" placeholder="Dob"/>
                       </div>
                     </div>
+                    @if($errors->has('pincode'))<div class="text-danger">{{ $errors->first('pincode') }}</div>@endif
+                    @if($errors->has('dob'))<div class="text-danger">{{ $errors->first('dob') }}</div>@endif
                   </div>
 
                   <div class="d-md-flex justify-content-start align-items-center mb-4 py-2" >
@@ -117,7 +122,7 @@
                         value="option2" />
                       <label class="form-check-label" for="maleGender">Male</label>
                     </div>
-  
+                    @if($errors->has('gender'))<div class="text-danger">{{ $errors->first('gender') }}</div>@endif
                   </div>
 
                   <div class="d-flex justify-content-end ">

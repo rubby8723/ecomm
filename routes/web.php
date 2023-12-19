@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Frontend\HomeController;
-use App\Http\Controllers\Frontend\LoginController;
+use App\Http\Controllers\Frontend\LoginRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,11 +29,22 @@ use App\Http\Controllers\Frontend\LoginController;
 // Route::get('fetch', [StudentController::class, 'fetch'])->name('fetch');
 // Route::get('edit/{id}', [StudentController::class, 'edit'])->name('edit');
 // Route::get('tests', [StudentController::class, 'helpertest'])->name('test');
-Route::get('/',[HomeController::class, 'index']);
+
+//public routes
+Route::get('/',[HomeController::class, 'index'])->name('/');
 Route::get('shop',[HomeController::class, 'shop']);
 Route::get('whyUs',[HomeController::class, 'whyUs']);
 Route::get('testimonial',[HomeController::class, 'testimonial']);
 Route::get('contactUs',[HomeController::class, 'contactUs']);
-Route::get('login',[LoginController::class,'show']);
-Route::get('registeration',[LoginController::class,'registeration']);
-Route::post('store',[LoginController::class,'store'])->name('store');
+
+//authentication routes
+Route::get('login',[LoginRegisterController::class,'login']);
+Route::get('register',[LoginRegisterController::class,'register']);
+Route::post('store',[LoginRegisterController::class,'store'])->name('store');
+Route::post('authenticate',[LoginRegisterController::class,'authenticate'])->name('authenticate');
+Route::middleware(['user_type:admin,customer'])->group(function(){
+    Route::get('dashboard',[LoginRegisterController::class,'dashboard'])->name('dashboard');
+});
+
+
+Route::post('logout',[LoginRegisterController::class,'logout'])->name('logout');

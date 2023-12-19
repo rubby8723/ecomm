@@ -18,7 +18,7 @@
 <script src="{{url('frontend/js/bootstrap.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
 </script>
-<script src="{{url('js/custom.js')}}"></script>
+{{-- <script src="{{url('js/custom.js')}}"></script> --}}
 
 </body>
 

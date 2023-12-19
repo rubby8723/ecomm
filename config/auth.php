@@ -41,7 +41,7 @@ return [
             'provider' => 'users',
         ],
 
-        'api' => [
+        'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
