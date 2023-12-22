@@ -61,8 +61,13 @@
                     <div class="col-md-6 mb-4">
                       <div class="form-outline">
                         <select name="country" class="form-control">
+                          
                           <option value="1">Country</option>
-                          <option value="2">india</option>
+                          @foreach($countries['data'] as $country)
+                            @foreach($country as $ca)
+                          <option value="1">{{$ca}}</option>
+                          @endforeach
+                          @endforeach
                         </select>
                       </div>
                     </div>

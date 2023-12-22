@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LoginRegisterController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +45,10 @@ Route::post('store',[LoginRegisterController::class,'store'])->name('store');
 Route::post('authenticate',[LoginRegisterController::class,'authenticate'])->name('authenticate');
 Route::middleware(['user_type:admin,customer'])->group(function(){
     Route::get('dashboard',[LoginRegisterController::class,'dashboard'])->name('dashboard');
+    Route::get('blog',[BlogController::class,'index'])->name('blog');
+    Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');
+   
 });
 
-
+Route::get('get-countries',[LoginRegisterController::class,'getCountries'])->name('getCountries');
 Route::post('logout',[LoginRegisterController::class,'logout'])->name('logout');

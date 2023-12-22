@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+use App\Models\User;
 use DB;
 
 class UserSeeder extends Seeder
@@ -16,7 +17,8 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        User::truncate();
+        User::create([
         'first_name' => 'krishna',
         'last_name' => 'kanhiya',
         // 'user_type' => 1,

@@ -3,18 +3,22 @@
 namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Country;
 use App\Models\UserDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use App\Http\Requests\RegistrationRequest;
 use Illuminate\Support\Facades\Hash;
-use Auth;
+use Auth,DB;
+
 class LoginRegisterController extends Controller
 {
     public function login(){
         return view('frontend.pages.login.form');
     }
     public function register(){
-        return view('frontend.pages.login.registration_form');
+        $countries = $this->getCountries();
+        return view('frontend.pages.login.registration_form',['countries'=>$countries]);
     }
     public function store(RegistrationRequest $request)
     {
@@ -69,4 +73,29 @@ class LoginRegisterController extends Controller
  
         return redirect('/');
     }
+     
+    public function getCountries()
+    {
+        // $response = Http::get('https://jsonplaceholder.typicode.com/posts');
+        $response = Http::get('https://api.first.org/data/v1/countries');
+        $jsonData = $response->json();
+        foreach($jsonData['data'] as $country){
+            foreach($country as $key => $ca)
+            { 
+                if($key=='country')
+                {
+                    Country::truncate();
+                    DB::table('countries')->insert([
+                        'name' => $ca,
+                    ]);
+                }
+                
+            }
+        }
+
+    }
+    
+        
+
+        
 }
